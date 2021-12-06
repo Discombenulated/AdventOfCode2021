@@ -17,6 +17,11 @@ public class FileInput
     public int[] ReadLinesAsInt()
     {
         var lines = ReadLines();
-        return lines.Select(line => int.Parse(line)).ToArray();
+        return lines.Select(int.Parse).ToArray();
+    }
+
+    public int[] ReadAsCommaSepratedInt()
+    {
+        return ReadLines().First().Split(",").Select(int.Parse).ToArray();
     }
 }
